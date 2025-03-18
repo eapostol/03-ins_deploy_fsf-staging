@@ -1,0 +1,14 @@
+# Exported from Render on 2025-03-18T22:10:27Z
+services:
+- type: web
+  name: 03-MERN-Sample-Deploy
+  runtime: node
+  repo: https://github.com/eapostol/03-ins_deploy_fsf
+  plan: free
+  envVars:
+  - key: MONGODB_URI
+    sync: false
+  region: virginia
+  buildCommand: npm run install; npm run render-build; npm run seed
+  startCommand: npm run start:dev
+version: "1"
